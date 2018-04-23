@@ -10,7 +10,7 @@ Description:
    Настройки последовательного порта : 19200,8,1 , N
 ******************************************************************************/
 
-#include <iocc2530.h>
+#include <cc2530.h>
 #include <string.h>
 #define uint unsigned int
 #define uchar unsigned char
