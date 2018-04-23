@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 void main(void) {
-	hal_init();
+	Hal_UART_Init();
 	while(1) {
 		printf("Hello, World!\n\r");
 	}
