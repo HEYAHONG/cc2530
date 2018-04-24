@@ -6,4 +6,4 @@ apt-get install libusb-1.0 libboost-all-dev gcc g++ pkg-config build-essential -
 cd toolchain/cc-tool
 ./configure
 make && make install
-
+make clean
