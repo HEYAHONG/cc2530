@@ -5,6 +5,7 @@ all:
 	make -C test_uart
 	make -C test_connection
 	make -C test_connection_hal
+	make -C test_adc_hal
 	make -C test_someradio
 
 clean:
@@ -13,4 +14,8 @@ clean:
 	make -C test_uart clean
 	make -C test_connection clean
 	make -C test_connection_hal clean
+	make -C test_adc_hal clean
 	make -C test_someradio clean
+
+	make -C toolchain/cc-tool clean
+
