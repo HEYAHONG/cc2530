@@ -12,3 +12,6 @@ all: $(CONTIKI_PROJECT)
 CONTIKI = ../contiki/
 CONTIKI_WITH_IPV6 = 1
 include $(CONTIKI)/Makefile.include
+burn:$(CONTIKI_PROJECT).hex
+	sudo cc-tool -e -w $(CONTIKI_PROJECT).hex -v
+	sudo cc-tool --reset

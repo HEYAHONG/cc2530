@@ -13,3 +13,4 @@ CONTIKI_WITH_IPV6 = 1
 # needed for rimestats
 CONTIKI_WITH_RIME = 1
 include $(CONTIKI)/Makefile.include
+
