@@ -2,7 +2,7 @@
 
 void Hal_UART_Init(void)
 {
-	U0CSR |= 0x80;
+	U0CSR |= 0xc0;
 	/* set 115200 */
 	U0GCR |= 11;   /* BAUD_E */
 	U0BAUD |= 216; /* BAUD_M */
@@ -15,4 +15,8 @@ void putchar(char c)
 	U0DBUF = c;
 	while(U0CSR & 0x01) {__asm__("NOP");}
 }
-
+char getchar() 
+{
+while(!(U0CSR & 0x04)) { __asm__("NOP");}
+return U0DBUF;
+}
