@@ -1,4 +1,5 @@
-新增contiki程序，编译后需用cc-tool手动烧写hex文件
+1.新增编译好的sdcc/cc-tool，可通过运行build_environment*后进行make。主要用于由于系统版本过高或gcc版本过高而无法成功编译的系统。
+2.新增contiki程序，编译后需用cc-tool手动烧写hex文件
 ————————————————————————————————————————————————————————————————————————————————————————
 1.setup_toolchain_for_toolchian.sh:安装编译工具链
 2.make:编译所有库以及测试程序
