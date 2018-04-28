@@ -6,7 +6,7 @@ exit 255
 fi
 workdir=`pwd`
 echo Installing build tools
-apt-get install libusb-1.0 srecord libboost-all-dev gcc g++ pkg-config make flex bison libncurses5-dev build-essential -y 
+apt-get install libusb-1.0 srecord libboost1.54-all-dev gcc g++ pkg-config make flex bison libncurses-dev build-essential -y 
 echo Installing sdcc
 apt-get remove sdcc -y
 cd $workdir/toolchain/sdcc
