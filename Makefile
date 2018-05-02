@@ -1,7 +1,9 @@
 .IGNORE:clean
-all:
+all:test
+lib:
 	make -C hal_cc2530
 	make -C hal_cc2530_TI
+test:lib
 	make -C test_uart
 	make -C test_connection
 	make -C test_connection_hal
