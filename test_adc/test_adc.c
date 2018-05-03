@@ -47,7 +47,7 @@ while(temp--);
 void main(void) {
 	Hal_UART_Init();
 	while(1) {
-	delay(10000);
-	printf("\tP0_5:%d\t\t\r",adcSampleSingle(ADC_REF_AVDD, ADC_12_BIT,ADC_AIN5)&0x7fff);
+	delay(1000000);
+	printf("P0_5:%d\n\r",adcSampleSingle(ADC_REF_AVDD, ADC_12_BIT,ADC_AIN5)&0x7fff);
 	}
 }
