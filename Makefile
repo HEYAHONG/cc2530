@@ -8,6 +8,7 @@ test:lib
 	make -C test_connection
 	make -C test_connection_hal
 	make -C test_adc_hal
+	make -C test_adc
 	make -C test_someradio
 	make -C test_cc2530dk_contiki 
 	make -C test_border-router_contiki
@@ -20,6 +21,7 @@ clean:
 	make -C test_connection clean
 	make -C test_connection_hal clean
 	make -C test_adc_hal clean
+	make -C test_adc clean
 	make -C test_someradio clean
 	make -C toolchain/sdcc distclean
 	make -C toolchain/cc-tool distclean

@@ -5,7 +5,7 @@ CC_TOOL = cc-tool
 SRC = $(wildcard *.c)
 
 $(SOLUTION).hex: $(SRC)
-	sdcc $(SDCCCFLAGS) $<
+	sdcc --model-large $(SDCCCFLAGS) $<
 	packihx $(SOLUTION).ihx > $(SOLUTION).hex
 
 burn: $(SOLUTION).hex

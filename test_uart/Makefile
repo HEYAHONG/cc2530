@@ -6,6 +6,7 @@ SRC = $(wildcard *.c)
 
 SDCCCFLAGS += -I../hal_cc2530/
 SDCCCFLAGS += -L../hal_cc2530/
+SDCCCFLAGS += --model-large
 SDCCCFLAGS += hal_cc2530.lib
 
 $(SOLUTION).hex: $(SRC)

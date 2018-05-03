@@ -4,8 +4,22 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <mcs51/cc2530.h>
-
 // #define CC2530_RF_LOW_POWER_RX
+typedef signed   char   int8;
+typedef unsigned char   uint8;
+
+typedef signed   short  int16;
+typedef unsigned short  uint16;
+
+typedef signed   long   int32;
+typedef unsigned long   uint32;
+#if defined __SDCC
+#define st(x)      do { x } while (0)
+#else
+#define st(x)      do { x } while (__LINE__ == -1)
+#endif
+
+#include "adc.h"
 
 #define CSP_CMD(x) RFST = x
 
@@ -72,5 +86,8 @@ enum HalError Hal_Rf_Send(void *payload, unsigned short payload_len);
 enum HalError Hal_Rf_Read(void *buf, unsigned short bufsize, uint8_t *received);
 
 void Hal_UART_Init(void);
+
+int16 adcSampleSingle(uint8 reference, uint8 resolution, uint8 channel);
+
 
 #endif

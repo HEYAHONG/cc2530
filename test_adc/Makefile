@@ -1,15 +1,25 @@
-SOLUTION = CC2530UART2Test
+SOLUTION = test_adc
+SELF = 2
+TARGET = 1
 
 CC_TOOL = cc-tool
 
-SRC = $(wildcard src/*.c)
+SDCCCFLAGS += -I../hal_cc2530/
+SDCCCFLAGS += -L../hal_cc2530/
+SDCCCFLAGS += --model-large
+SDCCCFLAGS += -DSELF=$(SELF) -DTARGET=$(TARGET)
+
+SRC = $(wildcard *.c)
 
 $(SOLUTION).hex: $(SRC)
-	sdcc $(SDCCCFLAGS) $<
+	sdcc $(SDCCCFLAGS) hal_cc2530.lib $<
 	packihx $(SOLUTION).ihx > $(SOLUTION).hex
 
 burn: $(SOLUTION).hex
 	sudo $(CC_TOOL) -e -w $^ -v
+	sudo $(CC_TOOL) --reset
+
+reset:
 	sudo $(CC_TOOL) --reset
 
 sim: $(SOLUTION).hex
@@ -26,4 +36,3 @@ clean:
 	rm -f *.rst
 	rm -f *.sym  
 	rm -f *.hex
-

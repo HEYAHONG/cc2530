@@ -6,10 +6,10 @@ SRC = $(wildcard *.c)
 OBJ = $(patsubst %.c, %.rel, $(SRC))
 
 all: $(OBJ)
-	sdcclib $(SOLUTION).lib *.rel
+	sdcclib   $(SOLUTION).lib *.rel
 
 %.rel: %.c
-	sdcc -c $(SDCCCFLAGS) $<
+	sdcc --model-large -c $(SDCCCFLAGS) $<
 
 clean:
 	rm -rf *.asm
